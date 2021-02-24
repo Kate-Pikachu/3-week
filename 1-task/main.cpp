@@ -1,12 +1,12 @@
 #include <iostream>
 #include <array>
-#include<vector>
+#include <vector>
 #include <set>
 #include <algorithm>
 #include <chrono>
 
 using namespace std;
-using namespace std::chrono;
+using namespace chrono;
 
 int main() {
 
@@ -32,18 +32,17 @@ int main() {
 	std::cout << "Time in second case (with array): " << delta_2.count() << " nanoseconds" << std::endl;
 
 
-
 	auto begin_3 = steady_clock::now();
-
 	vector<int> vec = { 1,3,5,7,9 };
 	sort(vec.begin(), vec.end());
-
 	auto end_3 = steady_clock::now();
-
 	auto delta_3 = duration_cast<nanoseconds>(end_3 - begin_3);
 	std::cout << "Time in third case (with vector): " << delta_3.count() << " nanoseconds" << std::endl;
 
-
+	//удивительно, но получилась следующая таблица лидеров:
+	// 1 место: вектор
+	// 2 место: массив
+	// 3 место: множество
 
 
 	system("pause");
